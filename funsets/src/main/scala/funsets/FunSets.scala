@@ -30,7 +30,7 @@ object FunSets {
   def union(s: Set, t: Set): Set = {
     (x: Int) => s(x) || t(x)
   }
-  
+
   /**
    * Returns the intersection of the two given sets,
    * the set of all elements that are both in `s` and `t`.
@@ -38,7 +38,7 @@ object FunSets {
   def intersect(s: Set, t: Set): Set = {
     (x: Int) => s(x) && t(x)
   }
-  
+
   /**
    * Returns the difference of the two given sets,
    * the set of all elements of `s` that are not in `t`.
@@ -46,7 +46,7 @@ object FunSets {
   def diff(s: Set, t: Set): Set = {
     (x: Int) => s(x) && !t(x)
   }
-  
+
   /**
    * Returns the subset of `s` for which `p` holds.
    */
@@ -62,10 +62,18 @@ object FunSets {
   /**
    * Returns whether all bounded integers within `s` satisfy `p`.
    */
+  /**
+    * Set sがa(-1000 ~ 1000)を含んでいて、条件pを満たす場合は再びイテレートされる
+    * これにより、Setの要素全てが条件を満たしている場合はtrueを返すようにしている
+    *
+    * @param s
+    * @param p
+    * @return
+    */
   def forall(s: Set, p: Int => Boolean): Boolean = {
     def iter(a: Int): Boolean = {
       if (a < -bound) true
-      else if (contains(s, a) && p(a)) false
+      else if (contains(s, a) && !p(a)) false
       else iter(a - 1)
     }
     iter(bound)
@@ -74,16 +82,33 @@ object FunSets {
   /**
    * Returns whether there exists a bounded integer within `s`
    * that satisfies `p`.
+   *
    */
+  /**
+    * p(x)をそのまま渡した場合、Setに含まれているすべての要素が真でないとtrueを返さないが、
+    * !p(x)にすることでaが含まれていて、p(x)を満たす場合はfalseを返すようになる
+    *
+    * @param s
+    * @param p
+    * @return
+    */
   def exists(s: Set, p: Int => Boolean): Boolean = {
-    forall(s, p)
+    !forall(s, (x: Int) => !p(x))
   }
 
   /**
    * Returns a set transformed by applying `f` to each element of `s`.
    */
+  /**
+    * xにはmapで処理された後の値が入る
+    * 例えば、fがx => x * xなら、帰ってきたSetに25を渡せばtrueが返ってくる
+    *
+    * @param s
+    * @param f
+    * @return
+    */
   def map(s: Set, f: Int => Int): Set = {
-    (x: Int) => exists(s, (a: Int) => a == x)
+    (x: Int) => exists(s, (a: Int) => f(a) == x)
   }
 
   /**
