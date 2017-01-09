@@ -18,16 +18,22 @@ object Huffman {
    * present in the leaves below it. The weight of a `Fork` node is the sum of the weights of these
    * leaves.
    */
-    abstract class CodeTree
+  abstract class CodeTree
   case class Fork(left: CodeTree, right: CodeTree, chars: List[Char], weight: Int) extends CodeTree
   case class Leaf(char: Char, weight: Int) extends CodeTree
-  
+
 
   // Part 1: Basics
-    def weight(tree: CodeTree): Int = ??? // tree match ...
-  
-    def chars(tree: CodeTree): List[Char] = ??? // tree match ...
-  
+  def weight(tree: CodeTree): Int = tree match {
+    case Fork(_, _, _, weight) => weight
+    case Leaf(_, weight) => weight
+  }
+
+  def chars(tree: CodeTree): List[Char] = tree match {
+    case Fork(_, _, chars, _) => chars
+    case Leaf(char, _) => List(char)
+  }
+
   def makeCodeTree(left: CodeTree, right: CodeTree) =
     Fork(left, right, chars(left) ::: chars(right), weight(left) + weight(right))
 
@@ -69,8 +75,18 @@ object Huffman {
    *       println("integer is  : "+ theInt)
    *   }
    */
-    def times(chars: List[Char]): List[(Char, Int)] = ???
-  
+  /**
+    * ._1, ._2はそれぞれ1番目の要素、２番目の要素を表している
+    * groupByは引数で与えた関数を見てグルーピングする
+    * なので、同じ値は同じグループとして処理される
+    * e.g. Map(('a', List('a', 'a')) -> Map(('a', 2))
+    *
+    * @param chars
+    * @return
+    */
+  def times(chars: List[Char]): List[(Char, Int)] =
+    chars.groupBy(x => x).map(x => (x._1, x._2.size)).toList
+
   /**
    * Returns a list of `Leaf` nodes for a given frequency table `freqs`.
    *
