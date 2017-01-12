@@ -120,7 +120,8 @@ object Huffman {
   def combine(trees: List[CodeTree]): List[CodeTree] = {
     if (trees.size < 2) trees
     else {
-      (trees.drop(2) +: (makeCodeTree(trees(0), trees(1)))).sortWith(weight(_) < weight(_))
+      // 先にdropを実行してしまうと、tree(0)に要素が入っていない場合がある(treesの要素が2つの場合)
+      (makeCodeTree(trees(0), trees(1)) +: trees.drop(2)).sortWith(weight(_) < weight(_))
     }
   }
 
@@ -178,9 +179,9 @@ object Huffman {
    */
     def decode(tree: CodeTree, bits: List[Bit]): List[Char] = {
       def loop(pTree: CodeTree, remainingBits: List[Bit], acc: List[Char]): List[Char] = {
-        (pTree, bits) match {
-          case (pTree: Leaf, Nil) => acc
-          case (pTree: Leaf, rest) => loop(pTree, rest, acc :+ pTree.char)
+        (pTree, remainingBits) match {
+          case (pTree: Leaf, Nil) => acc :+ pTree.char
+          case (pTree: Leaf, rest) => loop(tree, rest, acc :+ pTree.char)
           case (pTree: Fork, 0 :: rest) => loop(pTree.left, rest, acc)
           case (pTree: Fork, 1 :: rest) => loop(pTree.right, rest, acc)
         }
@@ -216,8 +217,8 @@ object Huffman {
     def loop(pTree: CodeTree, char: Char, acc: List[Bit]): List[Bit] = {
       pTree match {
         case (pTree: Leaf) => acc
-        case (pTree: Fork) if (chars(pTree.left).contains(char)) => loop(pTree.left, char, acc :+ 1)
-        case (pTree: Fork) => loop(pTree.right, char, acc :+ 0)
+        case (pTree: Fork) if (chars(pTree.left).contains(char)) => loop(pTree.left, char, acc :+ 0)
+        case (pTree: Fork) => loop(pTree.right, char, acc :+ 1)
       }
     }
     // List[Bit]が複数帰ってくるので、flatしておく
