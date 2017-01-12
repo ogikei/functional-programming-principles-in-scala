@@ -1,4 +1,4 @@
-[info] Updating {file:/Users/keisukeogiwara/MyWork/git/functional-programming-principles-in-scala/patmat/project/}patmat-build...
+[info] Updating {file:/Users/01013875/MyWork/functional-programming-principles-in-scala/patmat/project/}patmat-build...
 [debug] :: resolving dependencies :: default#patmat-build;0.1-SNAPSHOT
 [debug] 	confs: [compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool]
 [debug] 	validate = true
@@ -2817,19 +2817,19 @@
 [debug] 	[NOT REQUIRED] org.scala-sbt#apply-macro;0.13.9!apply-macro.jar
 [debug] 	[NOT REQUIRED] org.scala-lang#jline;2.10.5!jline.jar
 [debug] 	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar
-[debug] :: resolution report :: resolve 861ms :: artifacts dl 22ms
-[debug] 	report for default#patmat-build;0.1-SNAPSHOT compile produced in /Users/keisukeogiwara/MyWork/git/functional-programming-principles-in-scala/patmat/project/target/resolution-cache/reports/default-patmat-build-compile.xml
-[debug] 	report for default#patmat-build;0.1-SNAPSHOT runtime produced in /Users/keisukeogiwara/MyWork/git/functional-programming-principles-in-scala/patmat/project/target/resolution-cache/reports/default-patmat-build-runtime.xml
-[debug] 	report for default#patmat-build;0.1-SNAPSHOT test produced in /Users/keisukeogiwara/MyWork/git/functional-programming-principles-in-scala/patmat/project/target/resolution-cache/reports/default-patmat-build-test.xml
-[debug] 	report for default#patmat-build;0.1-SNAPSHOT provided produced in /Users/keisukeogiwara/MyWork/git/functional-programming-principles-in-scala/patmat/project/target/resolution-cache/reports/default-patmat-build-provided.xml
-[debug] 	report for default#patmat-build;0.1-SNAPSHOT optional produced in /Users/keisukeogiwara/MyWork/git/functional-programming-principles-in-scala/patmat/project/target/resolution-cache/reports/default-patmat-build-optional.xml
-[debug] 	report for default#patmat-build;0.1-SNAPSHOT compile-internal produced in /Users/keisukeogiwara/MyWork/git/functional-programming-principles-in-scala/patmat/project/target/resolution-cache/reports/default-patmat-build-compile-internal.xml
-[debug] 	report for default#patmat-build;0.1-SNAPSHOT runtime-internal produced in /Users/keisukeogiwara/MyWork/git/functional-programming-principles-in-scala/patmat/project/target/resolution-cache/reports/default-patmat-build-runtime-internal.xml
-[debug] 	report for default#patmat-build;0.1-SNAPSHOT test-internal produced in /Users/keisukeogiwara/MyWork/git/functional-programming-principles-in-scala/patmat/project/target/resolution-cache/reports/default-patmat-build-test-internal.xml
-[debug] 	report for default#patmat-build;0.1-SNAPSHOT plugin produced in /Users/keisukeogiwara/MyWork/git/functional-programming-principles-in-scala/patmat/project/target/resolution-cache/reports/default-patmat-build-plugin.xml
-[debug] 	report for default#patmat-build;0.1-SNAPSHOT sources produced in /Users/keisukeogiwara/MyWork/git/functional-programming-principles-in-scala/patmat/project/target/resolution-cache/reports/default-patmat-build-sources.xml
-[debug] 	report for default#patmat-build;0.1-SNAPSHOT docs produced in /Users/keisukeogiwara/MyWork/git/functional-programming-principles-in-scala/patmat/project/target/resolution-cache/reports/default-patmat-build-docs.xml
-[debug] 	report for default#patmat-build;0.1-SNAPSHOT pom produced in /Users/keisukeogiwara/MyWork/git/functional-programming-principles-in-scala/patmat/project/target/resolution-cache/reports/default-patmat-build-pom.xml
-[debug] 	report for default#patmat-build;0.1-SNAPSHOT scala-tool produced in /Users/keisukeogiwara/MyWork/git/functional-programming-principles-in-scala/patmat/project/target/resolution-cache/reports/default-patmat-build-scala-tool.xml
-[debug] 	resolve done (861ms resolve - 22ms download)
+[debug] :: resolution report :: resolve 2570ms :: artifacts dl 73ms
+[debug] 	report for default#patmat-build;0.1-SNAPSHOT compile produced in /Users/01013875/MyWork/functional-programming-principles-in-scala/patmat/project/target/resolution-cache/reports/default-patmat-build-compile.xml
+[debug] 	report for default#patmat-build;0.1-SNAPSHOT runtime produced in /Users/01013875/MyWork/functional-programming-principles-in-scala/patmat/project/target/resolution-cache/reports/default-patmat-build-runtime.xml
+[debug] 	report for default#patmat-build;0.1-SNAPSHOT test produced in /Users/01013875/MyWork/functional-programming-principles-in-scala/patmat/project/target/resolution-cache/reports/default-patmat-build-test.xml
+[debug] 	report for default#patmat-build;0.1-SNAPSHOT provided produced in /Users/01013875/MyWork/functional-programming-principles-in-scala/patmat/project/target/resolution-cache/reports/default-patmat-build-provided.xml
+[debug] 	report for default#patmat-build;0.1-SNAPSHOT optional produced in /Users/01013875/MyWork/functional-programming-principles-in-scala/patmat/project/target/resolution-cache/reports/default-patmat-build-optional.xml
+[debug] 	report for default#patmat-build;0.1-SNAPSHOT compile-internal produced in /Users/01013875/MyWork/functional-programming-principles-in-scala/patmat/project/target/resolution-cache/reports/default-patmat-build-compile-internal.xml
+[debug] 	report for default#patmat-build;0.1-SNAPSHOT runtime-internal produced in /Users/01013875/MyWork/functional-programming-principles-in-scala/patmat/project/target/resolution-cache/reports/default-patmat-build-runtime-internal.xml
+[debug] 	report for default#patmat-build;0.1-SNAPSHOT test-internal produced in /Users/01013875/MyWork/functional-programming-principles-in-scala/patmat/project/target/resolution-cache/reports/default-patmat-build-test-internal.xml
+[debug] 	report for default#patmat-build;0.1-SNAPSHOT plugin produced in /Users/01013875/MyWork/functional-programming-principles-in-scala/patmat/project/target/resolution-cache/reports/default-patmat-build-plugin.xml
+[debug] 	report for default#patmat-build;0.1-SNAPSHOT sources produced in /Users/01013875/MyWork/functional-programming-principles-in-scala/patmat/project/target/resolution-cache/reports/default-patmat-build-sources.xml
+[debug] 	report for default#patmat-build;0.1-SNAPSHOT docs produced in /Users/01013875/MyWork/functional-programming-principles-in-scala/patmat/project/target/resolution-cache/reports/default-patmat-build-docs.xml
+[debug] 	report for default#patmat-build;0.1-SNAPSHOT pom produced in /Users/01013875/MyWork/functional-programming-principles-in-scala/patmat/project/target/resolution-cache/reports/default-patmat-build-pom.xml
+[debug] 	report for default#patmat-build;0.1-SNAPSHOT scala-tool produced in /Users/01013875/MyWork/functional-programming-principles-in-scala/patmat/project/target/resolution-cache/reports/default-patmat-build-scala-tool.xml
+[debug] 	resolve done (2570ms resolve - 73ms download)
 [info] Done updating.
