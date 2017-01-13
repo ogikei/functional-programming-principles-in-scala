@@ -247,6 +247,14 @@ object Huffman {
    * a valid code tree that can be represented as a code table. Using the code tables of the
    * sub-trees, think of how to build the code table for the entire tree.
    */
+  /**
+    * 各ノードの文字列に対して、left nodeなら+0し、right nodeなら+1する
+    * それを再帰的に実施し、最終的にLeafまでみる
+    * 最終的にはmergeCodeTablesで結果をマージして返す
+    *
+    * @param tree
+    * @return
+    */
   def convert(tree: CodeTree): CodeTable = {
     def add(acc: CodeTable, bit: Bit, text: List[Char]): CodeTable = {
       text.map { char => (char, codeBits(acc)(char) :+ bit) }
