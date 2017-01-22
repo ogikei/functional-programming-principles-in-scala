@@ -181,6 +181,14 @@ object Anagrams {
    *
    *  Note: There is only one anagram of an empty sentence.
    */
+  /**
+    * "Apple" :: "Rin" :: List() -> List("Apple", "Rin")
+    * "Banana" :: "Pine" :: List() -> List("Banana", "Pine")
+    * => List(List("Apple", "Rin"), List("Banana", "Pine"))
+    *
+    * @param sentence
+    * @return
+    */
   def sentenceAnagrams(sentence: Sentence): List[Sentence] = {
     def loop(occurrences: Occurrences): List[Sentence] = {
       if (occurrences.isEmpty) List(List())
@@ -188,6 +196,7 @@ object Anagrams {
         for {
           occurrencesCombination <- combinations(occurrences)
           word <- dictionaryByOccurrences(occurrencesCombination)
+          // List()の要素を返す List(List())ではない
           rest <- loop(subtract(occurrences, occurrencesCombination))
         } yield word :: rest
       }
